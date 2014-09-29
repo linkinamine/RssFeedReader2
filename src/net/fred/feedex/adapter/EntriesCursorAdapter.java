@@ -108,12 +108,12 @@ public class EntriesCursorAdapter extends ResourceCursorAdapter {
         final long id = cursor.getLong(mIdPos);
         final boolean favorite = !mNotFavoriteEntries.contains(id) && (cursor.getInt(mFavoritePos) == 1 || mFavoriteEntries.contains(id));
 
-        holder.starImgView.setImageResource(favorite ? R.drawable.dimmed_rating_important : R.drawable.dimmed_rating_not_important);
-        holder.starImgView.setTag(favorite ? Constants.TRUE : Constants.FALSE);
+       // holder.starImgView.setImageResource(favorite ? R.drawable.dimmed_rating_important : R.drawable.dimmed_rating_not_important);
+       // holder.starImgView.setTag(favorite ? Constants.TRUE : Constants.FALSE);
         holder.starImgView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                boolean newFavorite = !Constants.TRUE.equals(view.getTag());
+               /* boolean newFavorite = !Constants.TRUE.equals(view.getTag());
 
                 if (newFavorite) {
                     view.setTag(Constants.TRUE);
@@ -132,7 +132,7 @@ public class EntriesCursorAdapter extends ResourceCursorAdapter {
 
                 ContentResolver cr = MainApplication.getContext().getContentResolver();
                 Uri entryUri = ContentUris.withAppendedId(mUri, id);
-                cr.update(entryUri, values, null, null);
+                cr.update(entryUri, values, null, null);*/
             }
         });
 
